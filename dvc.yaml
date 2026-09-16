@@ -25,3 +25,16 @@ stages:
       - models/exoplanet_classifier.joblib
     metrics:
       - metrics.json
+  deploy:
+    cmd: docker compose -f code/deployment/docker-compose.yml up --build -d
+    deps:
+      - .dockerignore
+      - code/deployment/api/Dockerfile
+      - code/deployment/api/main.py
+      - code/deployment/api/requirements.txt
+      - code/deployment/app/Dockerfile
+      - code/deployment/app/app.py
+      - code/deployment/app/requirements.txt
+      - code/deployment/docker-compose.yml
+      - models/exoplanet_classifier.joblib
+    always_changed: true

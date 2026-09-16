@@ -56,3 +56,42 @@ stages:
       hash: md5
       md5: bc78bdc5a5da27c7e55c90b2447f5c84
       size: 4442
+  deploy:
+    cmd: docker compose -f code/deployment/docker-compose.yml up --build -d
+    deps:
+    - path: .dockerignore
+      hash: md5
+      md5: d64e64114e653b4f9704593051bc08cf
+      size: 131
+    - path: code/deployment/api/Dockerfile
+      hash: md5
+      md5: 50c6bb34ad9f74b32aa02fe0c4381b9d
+      size: 365
+    - path: code/deployment/api/main.py
+      hash: md5
+      md5: 0f45da58468dea2d936493260c7c6332
+      size: 1477
+    - path: code/deployment/api/requirements.txt
+      hash: md5
+      md5: 00352e68002d56601b7e723a1d69dae0
+      size: 91
+    - path: code/deployment/app/Dockerfile
+      hash: md5
+      md5: 6a6ac9124987adb5a3a11e5a386326a3
+      size: 301
+    - path: code/deployment/app/app.py
+      hash: md5
+      md5: f4913f58e0c148f354e04561fa57bfae
+      size: 1687
+    - path: code/deployment/app/requirements.txt
+      hash: md5
+      md5: e465edfde83ac8c6343b9f4d8b9f3bb6
+      size: 35
+    - path: code/deployment/docker-compose.yml
+      hash: md5
+      md5: ebd6dfaaffaf1b6ce43b542ed59c1ee7
+      size: 325
+    - path: models/exoplanet_classifier.joblib
+      hash: md5
+      md5: bc78bdc5a5da27c7e55c90b2447f5c84
+      size: 4442

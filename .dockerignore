@@ -1,0 +1,12 @@
+.git
+.venv
+__pycache__
+*.pyc
+data
+notebooks
+mlruns
+mlartifacts
+mlflow.db
+metrics.json
+models/*
+!models/exoplanet_classifier.joblib
