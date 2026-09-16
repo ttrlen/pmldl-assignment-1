@@ -177,9 +177,6 @@ Open the personal cron table:
 crontab -e
 ```
 
-If asked to select an editor, choose `nano`. Add this single line, save with
-`Ctrl+O`, press `Enter`, and exit with `Ctrl+X`:
-
 ```cron
 */5 * * * * bash /home/ttrlen/PMLDLproj/pmldl-assignment-1/scripts/run_pipeline.sh
 ```
