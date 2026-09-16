@@ -11,3 +11,17 @@ stages:
     outs:
       - data/processed/train.csv
       - data/processed/test.csv
+  train_model:
+    cmd: python code/models/train_model.py --random-state ${model.random_state} --max-iter ${model.max_iter} --regularization-strength ${model.regularization_strength}
+    deps:
+      - code/models/train_model.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+    params:
+      - model.random_state
+      - model.max_iter
+      - model.regularization_strength
+    outs:
+      - models/exoplanet_classifier.joblib
+    metrics:
+      - metrics.json

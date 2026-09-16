@@ -26,3 +26,33 @@ stages:
       hash: md5
       md5: ba9d95c2526698a29d882d45bae43f1b
       size: 641599
+  train_model:
+    cmd: python code/models/train_model.py --random-state 42 --max-iter 2000 
+      --regularization-strength 1.0
+    deps:
+    - path: code/models/train_model.py
+      hash: md5
+      md5: 87fcd89452436fc13f2636e851a692af
+      size: 4411
+    - path: data/processed/test.csv
+      hash: md5
+      md5: ba653157efe3d48acc7ab2bbf35673af
+      size: 160477
+    - path: data/processed/train.csv
+      hash: md5
+      md5: ba9d95c2526698a29d882d45bae43f1b
+      size: 641599
+    params:
+      params.yaml:
+        model.max_iter: 2000
+        model.random_state: 42
+        model.regularization_strength: 1.0
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: c852d9b81ba30414568cec93ffdd0900
+      size: 107
+    - path: models/exoplanet_classifier.joblib
+      hash: md5
+      md5: bc78bdc5a5da27c7e55c90b2447f5c84
+      size: 4442

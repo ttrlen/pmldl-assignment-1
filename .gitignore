@@ -15,8 +15,10 @@ models/*
 # Local MLflow tracking data
 mlruns/
 mlartifacts/
+mlflow.db
 
 # Local settings and operating-system files
 .env
 .DS_Store
 *.log
+/metrics.json
