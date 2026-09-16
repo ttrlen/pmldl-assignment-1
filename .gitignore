@@ -16,6 +16,7 @@ models/*
 mlruns/
 mlartifacts/
 mlflow.db
+logs/
 
 # Local settings and operating-system files
 .env
