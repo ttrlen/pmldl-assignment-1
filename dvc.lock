@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python code/datasets/prepare_data.py --test-size 0.2 --random-state 42 
+      --outlier-contamination 0.02
+    deps:
+    - path: code/datasets/prepare_data.py
+      hash: md5
+      md5: d0f1164c242b42a88fd361e1eac6f2f2
+      size: 2605
+    - path: data/raw/cumulative.csv
+      hash: md5
+      md5: 871318df3ee31648eee1f976365f28d2
+      size: 3695322
+    params:
+      params.yaml:
+        data.outlier_contamination: 0.02
+        data.random_state: 42
+        data.test_size: 0.2
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: ba653157efe3d48acc7ab2bbf35673af
+      size: 160477
+    - path: data/processed/train.csv
+      hash: md5
+      md5: ba9d95c2526698a29d882d45bae43f1b
+      size: 641599

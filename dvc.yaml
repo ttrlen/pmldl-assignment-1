@@ -1,0 +1,13 @@
+stages:
+  prepare_data:
+    cmd: python code/datasets/prepare_data.py --test-size ${data.test_size} --random-state ${data.random_state} --outlier-contamination ${data.outlier_contamination}
+    deps:
+      - code/datasets/prepare_data.py
+      - data/raw/cumulative.csv
+    params:
+      - data.test_size
+      - data.random_state
+      - data.outlier_contamination
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
