@@ -1,0 +1,14 @@
+# Pipeline orchestration and experiment tracking
+dvc==3.67.1
+mlflow==3.16.0
+
+# Data processing and model training
+pandas==3.0.5
+scikit-learn==1.9.1
+joblib==1.6.0
+
+# Model API and web interface
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+streamlit==1.64.0
+requests==2.34.2
