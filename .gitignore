@@ -1,0 +1,22 @@
+# Local Python environment and interpreter artefacts
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Input and generated ML artefacts; DVC will manage their versions
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+
+# Local MLflow tracking data
+mlruns/
+mlartifacts/
+
+# Local settings and operating-system files
+.env
+.DS_Store
+*.log
